@@ -13,36 +13,73 @@
       color: #333;
       display: flex;
       flex-direction: column;
-      align-items: center;
       min-height: 100vh;
     }
-    header {
+
+    h1, h2, h3 {
+      color: #0a3d62;
+    }
+
+    a {
+      color: #0a3d62;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    /* Hero section */
+    .hero {
       background-color: #0a3d62;
-      width: 100%;
-      padding: 30px 0;
       color: white;
+      padding: 60px 20px;
       text-align: center;
     }
-    h1 {
-      margin-bottom: 10px;
-      font-size: 2.5em;
-    }
-    p.subtitle {
-      font-size: 1.2em;
-      color: #f0f0f0;
-    }
-    main {
-      max-width: 600px;
-      padding: 30px;
-      background: white;
-      margin-top: -20px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+
+    .hero img {
+      margin-top: 30px;
+      max-width: 100%;
       border-radius: 12px;
+    }
+
+    /* Features section */
+    .features {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 20px;
       text-align: center;
     }
+
+    .feature-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-top: 30px;
+    }
+
+    .feature {
+      flex: 1 1 250px;
+      padding: 20px;
+    }
+
+    .feature img {
+      height: 50px;
+      margin-bottom: 10px;
+    }
+
+    /* Form section */
+    .form-section {
+      max-width: 600px;
+      margin: 60px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
     form {
       margin-top: 20px;
     }
+
     input[type="email"] {
       padding: 12px;
       width: 80%;
@@ -51,6 +88,7 @@
       border: 1px solid #ccc;
       border-radius: 6px;
     }
+
     input[type="submit"] {
       padding: 12px 20px;
       font-size: 1em;
@@ -61,45 +99,92 @@
       border-radius: 6px;
       cursor: pointer;
     }
+
     input[type="submit"]:hover {
       background-color: #0077cc;
     }
+
+    /* Testimonial */
+    .testimonial {
+      text-align: center;
+      padding: 40px 20px;
+      background: #f0f0f0;
+    }
+
+    .testimonial p {
+      font-style: italic;
+      max-width: 600px;
+      margin: 10px auto;
+    }
+
+    /* Footer */
     .footer {
-      margin-top: auto;
+      text-align: center;
       padding: 20px;
       font-size: 0.9em;
       color: #777;
+      margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+      .feature-group {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Pivota</h1>
-    <p class="subtitle">Smarter Stock Signals, Powered by Real Data</p>
-  </header>
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Discover Smarter Stocks</h1>
+    <p style="font-size:1.2em; max-width:600px; margin:0 auto;">
+      Pivota analyzes hundreds of stocks using technical and fundamental data — giving you simple, AI-powered investment signals.
+    </p>
+    <img src="https://dummyimage.com/600x300/0a3d62/ffffff&text=App+Preview" alt="App preview">
+  </section>
 
-  <main>
-    <p>We're building a smarter way to analyze stocks using RSI, MACD, fundamentals, and AI scoring.</p>
-    <p>Get early access and receive weekly investment picks before everyone else.</p>
+  <!-- Features -->
+  <section class="features">
+    <h2>Why Pivota?</h2>
+    <div class="feature-group">
+      <div class="feature">
+        <img src="https://img.icons8.com/ios-filled/50/0a3d62/line-chart.png" alt="Chart Icon" />
+        <h3>Technical Insights</h3>
+        <p>Uses RSI, MACD, Bollinger Bands and more to spot trends early.</p>
+      </div>
+      <div class="feature">
+        <img src="https://img.icons8.com/ios-filled/50/0a3d62/data-in-both-directions.png" alt="Data Icon" />
+        <h3>Fundamental Health</h3>
+        <p>Considers valuation, earnings, and growth momentum for better signals.</p>
+      </div>
+      <div class="feature">
+        <img src="https://img.icons8.com/ios-filled/50/0a3d62/artificial-intelligence.png" alt="AI Icon" />
+        <h3>AI Score Engine</h3>
+        <p>Assigns a smart score to each stock daily so you don’t waste time.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Replace action with your Google Form or Mailchimp embed -->
-    <section class="form-section">
+  <!-- Email Form -->
+  <section class="form-section">
     <h2>Join Our Early Access List</h2>
     <p>Enter your email and be the first to get AI-powered stock insights from Pivota.</p>
-
-    <!-- ✅ Formspree Form -->
-    <form action="https://formspree.io/f/xgvypnlz" method="POST">
-      <input type="email" name="email" placeholder="Enter your email" required>
-      <br>
+    <form action="formspree.io/f/xgvypnlz" method="POST">
+      <input type="email" name="email" placeholder="Enter your email" required><br>
       <input type="submit" value="Get Early Access">
     </form>
   </section>
 
-  </main>
+  <!-- Testimonial -->
+  <section class="testimonial">
+    <h3>Trusted by early investors and analysts</h3>
+    <p>“I used to check 10 websites before making a move — now I just check Pivota’s score and I’m done in 5 minutes.” – Beta User</p>
+  </section>
 
+  <!-- Footer -->
   <div class="footer">
-    © 2025 Pivota. All rights reserved.
+    © 2025 Pivota · <a href="mailto:hello@pivota.com">Contact Us</a> · <a href="#">Twitter</a> · <a href="#">LinkedIn</a>
   </div>
 
 </body>
